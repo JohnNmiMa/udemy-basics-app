@@ -1,0 +1,10 @@
+<button class="btn btn-primary" (click)="toggleDisplay()">Display Details</button>
+<p *ngIf="displayDetails">The secret password is {{ spw }}</p>
+<hr>
+<p>Click Log</p>
+<p *ngFor="let click of clickLog; let idx = index"
+   [ngStyle]="{backgroundColor: idx >= 4 ? 'dodgerblue' : transparent}"
+   [ngClass]="{'old-click': idx >= 4 && idx < 8, 'super-old-click': idx >= 8 }">
+  Click @ timestamp {{ click }}
+</p>
+
